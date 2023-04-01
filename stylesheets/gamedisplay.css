@@ -1,0 +1,33 @@
+#display-container {
+	padding: 15px;
+	padding-bottom: 0px;
+}
+
+#gametable {
+	border-collapse: collapse;
+}
+
+#undo-button {
+	border: 2px solid #ff0000;
+	border-radius: 4px;
+	background-color: #ff4040;
+	color: white;
+}
+
+#restart-button {
+	border: 2px solid #ff0000;
+	border-radius: 4px;
+	background-color: #ff4040;
+	color: white;
+}
+
+#undo-button:hover {
+	background-color: #ff0000;
+}
+#restart-button:hover {
+	background-color: #ff0000;
+}
+
+#move-log {
+	border: 2px solid #ff4040;
+}
