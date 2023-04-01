@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="./stylesheets/pagelayout.css">
+		<link rel="stylesheet" href="./stylesheets/editor.css">
+		<link rel="stylesheet" href="./stylesheets/gamedisplay.css">
+	</head>
+	<body onload="resize()">
+		<div id="header" class="item1">DIY Chess AI</div>
+		<div class="grid-container" id="minimized-code">
+			<div id="display-container" class="item2 display-containe">
+				<table id="gametable" class="gametable"></table>
+			</div>
+			<div id="editor-container" class="editor item3" contenteditable></div>  
+			<div id="files-container" class="item4">
+				<ul id="min-navbar">
+					<li><a href="#init.js" id='mininit' onclick="if(this.className!='active'){switchCodeFile();this.className='active';document.getElementById('minmain').className='';}">init.js</a></li>
+					<li><a href="#main.js" id='minmain' onclick="if(this.className!='active'){switchCodeFile();this.className='active';document.getElementById('mininit').className='';}" class="active">main.js</a></li>
+					<li style="float:right"><button onclick="codeFullscreen()">&#x26F6;</button></li>
+					<li style="float:right;padding-top:5px;"><button onclick="download()">&#x2913;</button></li>
+					<li style="float:right;padding-top:5px;"><button onclick="upload()">&#x2912;</button></li>
+					<li style="float:right;padding-top:0px;"><button id="myBtn">&#9881;</button></li>
+				</ul>
+			</div>
+			<div id="console-container" class="item5 console"></div>
+			<div id="cp-container" class="item6">
+				<div class="cp-grid">
+					<button class="btn1" id="restart-button" onclick="restartGame(this.innerHTML)">Start Game</button>
+					<button class="btn2" id="undo-button" onclick="undo()">Undo</button>
+					<div class="move-log" id="move-log">
+						abcd
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id=max>
+			<div class="navbar" id="max-navbar" style="margin-right:10px;margin-left:10px;" hidden>
+				<ul>
+					<li><a href="#init.js" id='maxinit' onclick="if(this.className!='active'){switchCodeFile();this.className='active';document.getElementById('maxmain').className='';}">init.js</a></li>
+					<li><a href="#main.js" id='maxmain' onclick="if(this.className!='active'){switchCodeFile();this.className='active';document.getElementById('maxinit').className='';}" class="active">main.js</a></li>
+					<li style="float:right;"><button onclick="codeFullscreen()" style="font-size:30px; padding-top: 5px;">&times;</button></li>
+					<li style="float:right;padding-top:5px;"><button onclick="download()">&#x2913;</button></li>
+					<li style="float:right;padding-top:5px;"><button onclick="upload()">&#x2912;</button></li>
+				</ul>
+			</div>
+			<div class="editor" style="height:750px;margin:10px;margin-top:0px;" id="max-code" contenteditable hidden></div>
+		</div>
+		<div id="myModal" class="modal">
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Settings</h2>
+				</div>
+				<div class="modal-body">
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="./src/main.js" type="module"></script>
+</html>
